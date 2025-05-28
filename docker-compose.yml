@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  cliente-angular:
+    build: ./cliente-angular
+    ports:
+      - "80:80"
+    depends_on:
+      - servidor-websocket
+
+  servidor-websocket:
+    build: ./servidor-websocket
+    ports:
+      - "5000:5000"
